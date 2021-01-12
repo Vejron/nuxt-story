@@ -31,6 +31,19 @@ export default {
       })
     })
   },
+  head() {
+    return {
+      title: 'El',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: "description",
+          name: "description",
+          content: "Bli kund hos umeås bästa elbolag",
+        },
+      ],
+    };
+  },
   asyncData (context) {
     // // This what would we do in real project
     // const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
@@ -56,7 +69,6 @@ export default {
     if(context.store.state.articles.loaded !== '1') {
 
       let articlesRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'articles/', version: 'draft' })
-      console.warn('ssssssssssssssssss', articlesRefRes.data.stories);
       context.store.commit('articles/setArticles', articlesRefRes.data.stories)
       context.store.commit('articles/setLoaded', '1')
     }

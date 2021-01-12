@@ -4,10 +4,11 @@
     class="md:shadow-md hover:shadow-xl block rounded"
   >
     <div class="relative text-white">
-      <img
+      <VImg
         src="https://source.unsplash.com/random/600x350"
         width="1000"
         height="550"
+        alt="random teaser image"
       />
 
       <div

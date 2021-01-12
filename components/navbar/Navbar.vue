@@ -3,16 +3,16 @@
   <nav class="navbar w-full" :class="{ 'navbar--hidden': !showNavbar }">
     <div class="system-bar bg-black text-white text-xs flex justify-between items-center px-4 h-8">
       <div class="flex items-center divide-x-2 divide-gray-700">
-        <a href="" class="pr-2">Privat</a>
-        <a href="" class="pl-2">Företag</a>
+        <nuxt-link to="/" class="pr-2">Privat</nuxt-link>
+        <nuxt-link to="/" class="pl-2">Företag</nuxt-link>
       </div>
       <div>
-        <a href="">Pressrum</a>
+        <nuxt-link to="/">Pressrum</nuxt-link>
       </div>
     </div>
     <div class="navigation-bar bg-white text-lg flex justify-between px-4 h-16">
       <nuxt-link to="/" class="logo-section flex items-center">
-        <img class="w-40" src="/logo-ue-full-color.svg" alt="Umeå energi logotyp">
+        <img class="w-40" width="180" src="/logo-ue-full-color.svg" alt="Umeå energi logotyp">
       </nuxt-link>
       <ul class="hidden md:flex navbar-top-links items-center">
         <li class="px-4" v-for="link in topLinks" :key="link.name">

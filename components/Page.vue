@@ -7,7 +7,6 @@
       :key="blok._uid"
       :blok="blok"
       :is="blok.component" />
-      <div class="hmm">sdsdsdsdlkhdur</div>
   </div>
   
 </template>
@@ -22,9 +21,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.hmm {
-  font-family: ue-font;
-}
-</style>
