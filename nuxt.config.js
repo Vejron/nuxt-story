@@ -25,6 +25,7 @@ export default {
   plugins: [
     '~/plugins/components',
     '~/plugins/composition-api.js',
+    '~/plugins/vuetensils.js',
     '~/plugins/parallax.js',
     '~/plugins/storyblok-rich-text-renderer.js'
   ],
