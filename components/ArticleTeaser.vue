@@ -1,18 +1,26 @@
 <template>
-  <nuxt-link :to="articleLink" class="md:shadow-md hover:shadow-xl block rounded">
+  <nuxt-link
+    :to="articleLink"
+    class="md:shadow-md hover:shadow-xl block rounded"
+  >
     <div class="relative text-white">
-      <nuxt-image src="random:/" width="400" height="300"></nuxt-image>
-      <div class="absolute top-0 bg-gradient-to-b from-transparent to-gray-800 w-full h-full"></div>
+      <img
+        src="https://source.unsplash.com/random/600x350"
+        width="1000"
+        height="550"
+      />
+
+      <div
+        class="absolute top-0 bg-gradient-to-b from-transparent to-gray-800 w-full h-full"
+      ></div>
       <h2 class="absolute bottom-0 p-6 text-2xl font-bold">
         {{ articleContent.name }}
       </h2>
     </div>
-    
-  
-      <p class="p-6 leading-relaxed">
-        {{ articleContent.intro }}
-      </p>
-   
+
+    <p class="p-6 leading-relaxed">
+      {{ articleContent.intro }}
+    </p>
   </nuxt-link>
 </template>
 

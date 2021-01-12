@@ -4,15 +4,13 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'nuxt-story',
+    titleTemplate: '%s - Umeå Energi',
+    title: 'Umeå Energi',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -36,12 +34,13 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
+    '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxt/image',
+    //'@nuxt/image',
     [
       'storyblok-nuxt',
       {
@@ -55,6 +54,14 @@ export default {
     providers: {
       random: '~/providers/random'
     }
+  },
+
+  meta: {
+    name: 'Umeå Energi',
+    author: 'Vejron vejronsson',
+    description: 'Umeå energi din lokala elleverantör och samhällsbyggare',
+    theme_color: '#007f32',
+    lang: 'sv'
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

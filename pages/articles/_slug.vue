@@ -33,6 +33,10 @@ export default {
     })
   },
   asyncData (context) {
+    if(context.params.slug == 'articles') {
+      console.error('FAIL', context)
+      return;
+    }
     // Load the JSON from the API
     let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
 

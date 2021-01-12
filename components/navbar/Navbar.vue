@@ -43,7 +43,7 @@ export default {
         },
         {
           name: "Hållbarhet",
-          url: "articles",
+          url: "/articles",
         },
         {
           name: "Innovation",
