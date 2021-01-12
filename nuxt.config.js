@@ -17,12 +17,15 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~/assets/global.css',
+    '~/assets/ue-icons.css',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/components',
     '~/plugins/composition-api.js',
+    '~/plugins/parallax.js',
     '~/plugins/storyblok-rich-text-renderer.js'
   ],
 
@@ -46,6 +49,12 @@ export default {
       }
     ],
   ],
+
+  image: {
+    providers: {
+      random: '~/providers/random'
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {

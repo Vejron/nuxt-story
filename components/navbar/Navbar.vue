@@ -14,12 +14,14 @@
       <nuxt-link to="/" class="logo-section flex items-center">
         <img class="w-40" src="/logo-ue-full-color.svg" alt="Umeå energi logotyp">
       </nuxt-link>
-      <ul class="navbar-top-links flex items-center">
+      <ul class="hidden md:flex navbar-top-links items-center">
         <li class="px-4" v-for="link in topLinks" :key="link.name">
-          <a href="#">{{ link.name }}</a>
+          <nuxt-link class="top-link pb-1 whitespace-no-wrap" :to="link.url">{{ link.name }}</nuxt-link>
         </li>
       </ul>
-      <div class="last-bit-stuff flex items-center">search</div>
+      <div class="last-bit-stuff flex items-center">
+        <Hamburger/>
+      </div>
     </div>
 
     <div class="navbar-sub-links bg-white bg-opacity-25 h-0"></div>
@@ -41,7 +43,7 @@ export default {
         },
         {
           name: "Hållbarhet",
-          url: "",
+          url: "articles",
         },
         {
           name: "Innovation",
@@ -94,5 +96,16 @@ export default {
 .navbar.navbar--hidden {
   box-shadow: 0 2px 15px rgba(71, 120, 120, 0.5);
   transform: translate3d(0, -2rem, 0);
+}
+.top-link {
+  font-weight: 300;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 2.5px;
+  transition: border-bottom-color, font-weight .3s;
+}
+.top-link:hover {
+  border-bottom-color: black;
+  font-weight: 600;
 }
 </style>

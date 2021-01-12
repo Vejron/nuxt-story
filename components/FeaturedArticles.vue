@@ -1,10 +1,10 @@
 <template>
   <div v-editable="blok">
     <h2 class="pt-2 pl-6 text-lg text-gray-700 italic">{{ blok.title }}</h2>
-    <ul class="grid my-6 gap-4 md:grid-cols-3">
+    <ul class="grid my-8 gap-8 md:grid-cols-3">
       <li
         v-for="article in sortedArticles" :key="article._uid"
-        class="flex-auto px-6" style="min-width: 33%">
+        class="flex-auto " style="min-width: 33%">
         <article-teaser
           v-if="article.content"
           :article-link="article.full_slug"

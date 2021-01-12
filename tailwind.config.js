@@ -5,7 +5,11 @@
 ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 */
 module.exports = {
-  theme: {},
+  theme: {
+      fontFamily: {
+       'sans': ['"Inter var experimental"', 'ui-sans-serif', 'system-ui'],
+      }
+  },
   variants: {},
   plugins: [
     require('@tailwindcss/typography')

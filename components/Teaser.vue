@@ -9,8 +9,8 @@
       background-blend-mode: multiply;
     "
   >
-    <h1 class="text-6xl mb-6">{{ blok.headline }}</h1>
-    <p class="text-xl">{{ blok.subheading }}</p>
+    <h1 v-parallax="-0.2" class="text-6xl mb-6">{{ blok.headline }}</h1>
+    <p v-parallax="0.2" class="text-xl">{{ blok.subheading }}</p>
   </div>
 </template>
 

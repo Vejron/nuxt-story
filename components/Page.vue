@@ -1,13 +1,15 @@
 <template>
   <div
     v-editable="blok"
-    class="px-6">
+    class="">
     <component
       v-for="blok in blok.body"
       :key="blok._uid"
       :blok="blok"
       :is="blok.component" />
+      <div class="hmm">sdsdsdsdlkhdur</div>
   </div>
+  
 </template>
 
 <script>
@@ -20,3 +22,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.hmm {
+  font-family: ue-font;
+}
+</style>
