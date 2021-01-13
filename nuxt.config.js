@@ -24,6 +24,7 @@ export default {
     '~/plugins/components',
     '~/plugins/composition-api.js',
     '~/plugins/vuetensils.js',
+    '~/plugins/gtag-plugin.client.js',
     '~/plugins/parallax.js',
     '~/plugins/storyblok-rich-text-renderer.js'
   ],
@@ -36,7 +37,6 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -55,10 +55,6 @@ export default {
     providers: {
       random: '~/providers/random'
     }
-  },
-
-  googleAnalytics: {
-    id: 'G-NM587VQBNT'
   },
 
   meta: {
