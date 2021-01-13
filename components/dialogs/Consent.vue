@@ -44,10 +44,13 @@ export default {
   },
 
   mounted() {
-    if (!localStorage.getItem("ga_consent")) {
+    const consent = localStorage.getItem("ga_consent");
+    if (!consent) {
       setTimeout(() => {
         this.dialog = true;
       }, 800);
+    } else if (consent === 'ok') {
+      this.enablePlugin();
     }
   },
 };
