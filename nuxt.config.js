@@ -36,6 +36,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -54,6 +55,10 @@ export default {
     providers: {
       random: '~/providers/random'
     }
+  },
+
+  googleAnalytics: {
+    id: 'G-NM587VQBNT'
   },
 
   meta: {

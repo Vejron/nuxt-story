@@ -1,6 +1,6 @@
 <template>
 <div class="pb-32">
-  <nav class="navbar w-full" :class="{ 'navbar--hidden': !showNavbar }">
+  <nav class="navbar w-full" :class="{ 'navbar--hidden': !showNavbar, 'navbar--shadow': showShadow }">
     <div class="system-bar bg-black text-white text-xs flex justify-between items-center px-4 h-8">
       <div class="flex items-center divide-x-2 divide-gray-700">
         <nuxt-link to="/" class="pr-2">Privat</nuxt-link>
@@ -23,7 +23,6 @@
         <Hamburger/>
       </div>
     </div>
-
     <div class="navbar-sub-links bg-white bg-opacity-25 h-0"></div>
   </nav>
   </div>
@@ -64,6 +63,7 @@ export default {
   methods: {
     onScroll() {
       const currentScrollPosition = window.pageYOffset
+      this.showShadow = !!currentScrollPosition;
       if (currentScrollPosition < 0) {
         return;
       }
@@ -94,8 +94,11 @@ export default {
   transition: 0.2s all ease-out;
 }
 .navbar.navbar--hidden {
-  box-shadow: 0 2px 15px rgba(71, 120, 120, 0.5);
+  
   transform: translate3d(0, -2rem, 0);
+}
+.navbar.navbar--shadow {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
 }
 .top-link {
   font-weight: 300;
