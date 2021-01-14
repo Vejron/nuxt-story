@@ -1,11 +1,11 @@
 <template>
   <nuxt-link
     :to="articleLink"
-    class="md:shadow-md hover:shadow-xl block rounded"
+    class="transition duration-200 hover:shadow-xl block rounded"
   >
     <div class="relative text-white">
       <VImg
-        src="https://source.unsplash.com/random/600x350"
+        :src="image"
         width="1000"
         height="550"
         alt="random teaser image"
@@ -37,5 +37,10 @@ export default {
       required: true,
     },
   },
+  computed: {
+    image() {
+      return this.articleContent?.image?.filename;
+    }
+  }
 };
 </script>

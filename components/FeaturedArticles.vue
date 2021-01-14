@@ -4,7 +4,7 @@
     <ul class="grid my-8 gap-8 md:grid-cols-3">
       <li
         v-for="article in sortedArticles" :key="article._uid"
-        class="flex-auto " style="min-width: 33%">
+        class="flex-auto ">
         <article-teaser
           v-if="article.content"
           :article-link="article.full_slug"
@@ -34,7 +34,7 @@ export default {
       featuredArticles.sort((a, b) => {
         return this.blok.articles.indexOf(a.uuid) - this.blok.articles.indexOf(b.uuid);
       })
-
+      
       return featuredArticles
     }
   }

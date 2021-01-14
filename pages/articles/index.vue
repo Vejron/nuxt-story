@@ -1,12 +1,11 @@
 <template>
   <section>
-    <h2 class="py-10 text-center font-bold text-4xl">Artiklar</h2>
-    <ul class="flex py-6 mb-6">
+    <h2 class="py-10 text-center font-bold text-4xl">Artikel översikt</h2>
+    <ul class="mx-0 md:mx-4 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
       <li
         v-for="article in stories"
         :key="article._uid"
-        class="flex-auto px-6"
-        style="min-width: 33%"
+        class="flex-auto"
       >
         <article-teaser
           v-if="article.content"

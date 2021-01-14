@@ -69,6 +69,7 @@ export default {
     if(context.store.state.articles.loaded !== '1') {
 
       let articlesRefRes = await context.app.$storyapi.get(`cdn/stories/`, { starts_with: 'articles/', version: 'draft' })
+      console.log('blaha', articlesRefRes.data.stories);
       context.store.commit('articles/setArticles', articlesRefRes.data.stories)
       context.store.commit('articles/setLoaded', '1')
     }

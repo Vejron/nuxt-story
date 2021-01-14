@@ -1,30 +1,73 @@
 <template>
-<div class="pb-32">
-  <nav class="navbar w-full" :class="{ 'navbar--hidden': !showNavbar, 'navbar--shadow': showShadow }">
-    <div class="system-bar bg-black text-white text-xs flex justify-between items-center px-4 h-8">
-      <div class="flex items-center divide-x-2 divide-gray-700">
-        <nuxt-link to="/" class="pr-2">Privat</nuxt-link>
-        <nuxt-link to="/" class="pl-2">Företag</nuxt-link>
+  <div class="pb-32">
+    <nav
+      class="navbar w-full"
+      :class="{ 'navbar--hidden': !showNavbar, 'navbar--shadow': showShadow }"
+    >
+      <div
+        class="system-bar bg-black text-white text-xs flex justify-between items-center px-4 h-8"
+      >
+        <div class="flex items-center divide-x-2 divide-gray-700">
+          <nuxt-link to="/" class="pr-2">Privat</nuxt-link>
+          <nuxt-link to="/" class="pl-2">Företag</nuxt-link>
+        </div>
+        <div>
+          <nuxt-link to="/">Pressrum</nuxt-link>
+        </div>
       </div>
-      <div>
-        <nuxt-link to="/">Pressrum</nuxt-link>
+      <div
+        class="navigation-bar bg-white text-lg flex justify-between px-4 h-16"
+      >
+        <nuxt-link to="/" class="logo-section flex items-center">
+          <img
+            class="w-40"
+            width="180"
+            src="/logo-ue-full-color.svg"
+            alt="Umeå energi logotyp"
+          />
+        </nuxt-link>
+        <ul class="hidden md:flex items-center">
+          <li class="px-4" v-for="link in topLinks" :key="link.name">
+            <nuxt-link
+              class="top-link pb-1 whitespace-no-wrap"
+              :to="link.url"
+              >{{ link.name }}</nuxt-link
+            >
+          </li>
+        </ul>
+        <div v-clickout="onClickoutMenu" class="last-bit-stuff flex items-center">
+          <Hamburger :navbarActive="showMobile" @click="showMobile = !showMobile" />
+          <leaps
+            v-if="showMobile"
+            :damping="20"
+            :stiffness="290"
+            :mass="2"
+            :from="{ x: 100 }"
+            :to="{ x: 0 }"
+          >
+            <ul
+              slot-scope="{ leaps }"
+              :style="`transform: translateX(${leaps.x}%);`"
+              class="mobile-nav fixed bg-white w-full left-0 md:hidden navbar-top-links"
+            >
+              <li
+                @click="showMobile = false"
+                class="px-4 mb-2"
+                v-for="link in topLinks"
+                :key="link.name"
+              >
+                <nuxt-link
+                  class="top-link pb-1 whitespace-no-wrap"
+                  :to="link.url"
+                  >{{ link.name }}</nuxt-link
+                >
+              </li>
+            </ul>
+          </leaps>
+        </div>
       </div>
-    </div>
-    <div class="navigation-bar bg-white text-lg flex justify-between px-4 h-16">
-      <nuxt-link to="/" class="logo-section flex items-center">
-        <img class="w-40" width="180" src="/logo-ue-full-color.svg" alt="Umeå energi logotyp">
-      </nuxt-link>
-      <ul class="hidden md:flex navbar-top-links items-center">
-        <li class="px-4" v-for="link in topLinks" :key="link.name">
-          <nuxt-link class="top-link pb-1 whitespace-no-wrap" :to="link.url">{{ link.name }}</nuxt-link>
-        </li>
-      </ul>
-      <div class="last-bit-stuff flex items-center">
-        <Hamburger/>
-      </div>
-    </div>
-    <div class="navbar-sub-links bg-white bg-opacity-25 h-0"></div>
-  </nav>
+      <div class="navbar-sub-links bg-white bg-opacity-25 h-0"></div>
+    </nav>
   </div>
 </template>
 
@@ -34,35 +77,39 @@ export default {
     return {
       showNavbar: true,
       showShadow: false,
+      showMobile: false,
       lastScrollPosition: 0,
       topLinks: [
         {
           name: "Produkter",
-          url: "",
+          url: "/",
         },
         {
-          name: "Hållbarhet",
+          name: "Artiklar",
           url: "/articles",
         },
         {
           name: "Innovation",
-          url: "",
+          url: "/",
         },
         {
           name: "Om oss",
-          url: "",
+          url: "/",
         },
         {
           name: "Kundservice",
-          url: "",
+          url: "/",
         },
       ],
     };
   },
 
   methods: {
+    onClickoutMenu() {
+      this.showMobile = false;
+    },
     onScroll() {
-      const currentScrollPosition = window.pageYOffset
+      const currentScrollPosition = window.pageYOffset;
       this.showShadow = !!currentScrollPosition;
       if (currentScrollPosition < 0) {
         return;
@@ -87,6 +134,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.mobile-nav {
+  top: 6rem;
+  height: calc(100vh);
+}
 .navbar {
   position: fixed;
   box-shadow: none;
@@ -94,7 +145,6 @@ export default {
   transition: 0.2s all ease-out;
 }
 .navbar.navbar--hidden {
-  
   transform: translate3d(0, -2rem, 0);
 }
 .navbar.navbar--shadow {
@@ -105,7 +155,7 @@ export default {
   border-bottom-color: transparent;
   border-bottom-style: solid;
   border-bottom-width: 2.5px;
-  transition: border-bottom-color, font-weight .3s;
+  transition: border-bottom-color, font-weight 0.3s;
 }
 .top-link:hover {
   border-bottom-color: black;

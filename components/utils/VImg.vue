@@ -156,7 +156,7 @@ export default {
         });
       }
 
-      img.removeEventListener('load', this.onLoad);
+      if(img) img.removeEventListener('load', this.onLoad);
     },
   },
 };

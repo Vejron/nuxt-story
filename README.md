@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/826e4e0e-7b6d-4ea9-b1fa-413bff50de02/deploy-status)](https://app.netlify.com/sites/eager-shirley-8d4c2d/deploys)
 # nuxt-story
 
 ## Build Setup
