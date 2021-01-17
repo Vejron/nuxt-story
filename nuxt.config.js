@@ -17,6 +17,7 @@ export default {
   css: [
     '~/assets/global.css',
     '~/assets/ue-icons.css',
+    '@braid/vue-formulate/dist/snow.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -26,7 +27,8 @@ export default {
     '~/plugins/vuetensils.client.js',
     '~/plugins/gtag-plugin.client.js',
     '~/plugins/parallax.js',
-    '~/plugins/storyblok-rich-text-renderer.js'
+    '~/plugins/storyblok-rich-text-renderer.js',
+    '~/plugins/vue-formulate',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -47,6 +49,24 @@ export default {
       {
         accessToken: 'Vy45dQVOwVhXOBRo2KlQ0Att',
         cacheProvider: 'memory'
+      }
+    ],
+    [
+      'nuxt-i18n',
+      {
+        locales: ['sv', 'en'],
+        defaultLocale: 'sv',
+        vueI18n: {
+          fallbackLocale: 'sv',
+          messages: {
+            en: {
+              welcome: 'Welcome'
+            },
+            sv: {
+              welcome: 'Välkommen'
+            },
+          }
+        }
       }
     ],
   ],

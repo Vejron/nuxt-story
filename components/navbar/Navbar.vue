@@ -89,8 +89,8 @@ export default {
           url: "/articles",
         },
         {
-          name: "Innovation",
-          url: "/",
+          name: "Sponsring",
+          url: "/sponsor",
         },
         {
           name: "Om oss",
