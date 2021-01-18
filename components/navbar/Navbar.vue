@@ -98,7 +98,7 @@ export default {
         },
         {
           name: "Kundservice",
-          url: "/",
+          url: "/kundservice",
         },
       ],
     };

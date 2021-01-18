@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="prose login-form flex flex-col items-center mx-auto sm:w-full max-w-screen-lg">
+    <div class="prose-red login-form flex flex-col items-center mx-auto sm:w-full max-w-screen-lg">
       <img class="px-4 mb-0" src="/images/Sponsor-heroimage-ansokan-ny.avif" width="1006" height="528" />
       <FormulateForm
         class="p-4 w-full max-w-screen-lg"

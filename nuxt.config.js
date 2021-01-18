@@ -29,6 +29,7 @@ export default {
     '~/plugins/parallax.js',
     '~/plugins/storyblok-rich-text-renderer.js',
     '~/plugins/vue-formulate',
+   
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
