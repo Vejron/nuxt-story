@@ -26,6 +26,7 @@ export default {
     '~/plugins/composition-api.js',
     '~/plugins/vuetensils.client.js',
     '~/plugins/gtag-plugin.client.js',
+    '~/plugins/crisp.client.js',
     '~/plugins/parallax.js',
     '~/plugins/storyblok-rich-text-renderer.js',
     '~/plugins/vue-formulate',

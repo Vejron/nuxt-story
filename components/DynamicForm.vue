@@ -5,18 +5,26 @@
       @submit="submitHandler"
       #default="{ isLoading, hasErrors }"
     >
-      <FormulateInput
-        :key="blok._uid"
-        v-for="blok in blok.inputs"
-        class=""
-        :type="blok.type"
-        :name="blok.name"
-        :placeholder="blok.placeholder"
-        :label="blok.label"
-        :validation="blok.validators"
-        :help="blok.help"
-        error-behavior="blur"
-      />
+      <template v-for="blok in blok.inputs">
+        <template v-if="blok.component === 'input-field'">
+          <FormulateInput
+            :key="blok._uid"
+            class=""
+            :type="blok.type"
+            :name="blok.name"
+            :placeholder="blok.placeholder"
+            :label="blok.label"
+            :validation="blok.validators"
+            :help="blok.help"
+            error-behavior="blur"
+          />
+        </template>
+        <template v-else-if="blok.component === 'responsive-grid'">
+          <responsive-grid :blok="blok" :key="blok._uid">
+
+          </responsive-grid>
+        </template>
+      </template>
       <FormulateInput
         type="submit"
         :disabled="isLoading || hasErrors"
@@ -36,6 +44,7 @@ export default {
   },
   methods: {
     async submitHandler(data) {
+      console.log('form data: ', data);
       await fetch(this.blok.endpoint, {
         method: "POST",
         headers: {
