@@ -10,6 +10,31 @@
     "
   >
     <div class="waves"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.1 121.1">
+      <defs>
+        <style>
+          .cls-1 {
+            fill: #007f32;
+          }
+        </style>
+      </defs>
+      <g>
+        <g>
+          <path
+            d="M112.8 83.8c10.2 0 9.8-4.4 11-4.4s1.1 1 .9 2.7l-.3 2A43.6 43.6 0 0180 121H61.4c-15.3 0-23.4-10.5-23.4-23.4a30 30 0 01.7-5.9c1.2-5 5.6-8 11-8zM113.6 32.3A11.5 11.5 0 00125 21V2.8C125 1 125-.1 124 0s-1 4.4-11.1 4.4H68A11.6 11.6 0 0057 13l-5.4 21c-.5 1.7-.2 2.8 1 2.7s.8-4.4 11-4.4z"
+            class="cls-1"
+          />
+          <path
+            fill="#ffb300"
+            d="M113.6 72A11.5 11.5 0 00125 60.5v-18c0-1.8 0-3-1.1-2.8s-1 4.4-11.1 4.4H59a11.6 11.6 0 00-11.2 8.6l-5.4 21c-.5 1.7-.2 2.8 1 2.7s.8-4.4 11-4.4z"
+          />
+          <path
+            d="M26 98.2a27.6 27.6 0 01.7-6.3L43.5 19a11.2 11.2 0 00.5-3.2A11.4 11.4 0 0032.6 4.4H12.4C2 4.4 2.5.1 1.3 0S0 1.1 0 2.9v76.4c0 16.4 14 36.8 34.5 41 1.8.3 2.8.6 3-.7 0-.6-2.3-1.8-4.5-3.2-4.6-3-7.2-10.6-7-18.2z"
+            class="cls-1"
+          />
+        </g>
+      </g>
+    </svg>
     <h1 v-parallax="-0.2" class="text-6xl mb-6">{{ blok.headline }}</h1>
     <p v-parallax="0.2" class="text-xl">{{ blok.subheading }}</p>
   </div>
@@ -29,6 +54,12 @@ export default {
 </script>
 
 <style scoped>
+svg {
+  position: absolute;
+  width: 25vw;
+  opacity: 0.5;
+  transform: translate3d(0, -20%, 0);
+}
 .waves {
   position: absolute;
   bottom: 0;
@@ -53,6 +84,10 @@ export default {
   .waves::before,
   .waves::after {
     top: -20vw;
+  }
+  svg {
+    width: 55vw;
+    opacity: 0.5;
   }
 }
 
