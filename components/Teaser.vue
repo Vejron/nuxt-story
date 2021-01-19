@@ -1,8 +1,7 @@
 <template>
   <div
     v-editable="blok"
-    class="p-6 text-center relative  text-white bg-gray-600 shadow rounded-sm bg-cover w-full flex flex-col items-center justify-center antialiased"
-    
+    class="p-6 text-center relative text-white bg-cover w-full flex flex-col items-center justify-center antialiased"
     style="
       overflow: hidden;
       background-position: 50%;
@@ -30,37 +29,49 @@ export default {
 </script>
 
 <style scoped>
-
 .waves {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 300px;
-  background-color: #c8f71e;
   transition: 500ms;
 }
 
 .waves::before,
 .waves::after {
-  content: '';
+  content: "";
   position: absolute;
-  width: 350vw;
-  height: 350vw;
-  top: -70vw;
+  width: 300vw;
+  height: 300vw;
+  top: -65vw;
   left: 50%;
   transform: translate(-50%, -75%);
 }
 
+@media only screen and (max-width: 600px) {
+  .waves::before,
+  .waves::after {
+    top: -20vw;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .waves::before,
+  .waves::after {
+    top: -70vw;
+  }
+}
+
 .waves::before {
   border-radius: 44%;
-  background: rgb(11, 53, 14);
+  background: rgba(255, 240, 25);
   animation: waves 32s linear infinite;
 }
 
 .waves::after {
   border-radius: 44%;
-  background: rgba(13, 199, 29, 0.5);
+  background: rgba(7, 139, 14, 0.7);
   animation: waves 60s linear infinite;
 }
 
@@ -68,7 +79,7 @@ export default {
   0% {
     transform: translate(-50%, -75%) rotate(0deg);
   }
-  
+
   100% {
     transform: translate(-50%, -75%) rotate(360deg);
   }
