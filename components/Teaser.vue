@@ -50,16 +50,17 @@ export default {
 <style scoped>
 svg {
   position: absolute;
-  width: 25vw;
+  width: 15vw;
   opacity: 0.3;
   transform: translate3d(0, -20%, 0);
 }
 .waves {
+  --div-width: calc(100vh / 100vw);
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 300px;
+  height: 20vw;
   transition: 500ms;
 }
 
@@ -75,22 +76,11 @@ svg {
 }
 
 @media only screen and (max-width: 600px) {
-  .waves::before,
-  .waves::after {
-    top: -20vw;
-  }
   svg {
-    width: 55vw;
-    opacity: 0.5;
+    width: 50vw;
   }
 }
 
-@media only screen and (min-width: 1400px) {
-  .waves::before,
-  .waves::after {
-    top: -70vw;
-  }
-}
 
 .waves::before {
   border-radius: 44%;

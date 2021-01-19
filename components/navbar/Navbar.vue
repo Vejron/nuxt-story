@@ -8,8 +8,8 @@
         class="system-bar bg-black text-white text-xs flex justify-between items-center px-4 h-8"
       >
         <div class="flex items-center divide-x-2 divide-gray-700">
-          <nuxt-link to="/" class="pr-2">Privat</nuxt-link>
-          <nuxt-link to="/" class="pl-2">Företag</nuxt-link>
+          <nuxt-link to="/login" class="pr-2">Privat</nuxt-link>
+          <nuxt-link to="/register" class="pl-2">Företag</nuxt-link>
         </div>
         <div>
           <nuxt-link to="/">Pressrum</nuxt-link>
@@ -35,8 +35,9 @@
             >
           </li>
         </ul>
+        <SearchBox :search="fetchSuggestions" class="hidden lg:flex items-center max-w-sm ml-12" />
         <div v-clickout="onClickoutMenu" class="last-bit-stuff flex items-center">
-          <Hamburger :navbarActive="showMobile" @click="showMobile = !showMobile" />
+          <Hamburger class="md:hidden" :navbarActive="showMobile" @click="showMobile = !showMobile" />
           <leaps
             v-if="showMobile"
             :damping="20"
@@ -105,6 +106,16 @@ export default {
   },
 
   methods: {
+    async fetchSuggestions(searchInput) {
+      const { data } = await this.$storyapi.get('cdn/stories', {
+        //starts_with: 'articles/',
+        //resolve_relations: 'author',
+        search_term: searchInput,
+        per_page: 5,
+      })
+
+      return data.stories
+    },
     onClickoutMenu() {
       this.showMobile = false;
     },
