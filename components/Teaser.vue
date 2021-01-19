@@ -40,6 +40,7 @@ export default {
     blok: {
       type: Object,
       required: true,
+      
     },
   },
 };
