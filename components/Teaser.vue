@@ -55,7 +55,6 @@ svg {
   transform: translate3d(0, -20%, 0);
 }
 .waves {
-  --div-width: calc(100vh / 100vw);
   position: absolute;
   bottom: 0;
   left: 0;
