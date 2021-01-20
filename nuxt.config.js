@@ -30,6 +30,7 @@ export default {
     '~/plugins/parallax.js',
     '~/plugins/storyblok-rich-text-renderer.js',
     '~/plugins/vue-formulate',
+    '~/plugins/graphcms.js',
    
   ],
 
@@ -46,6 +47,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     //'@nuxt/image',
+    '@nuxtjs/markdownit',
     '@nuxt/http',
     [
       'storyblok-nuxt',
@@ -73,6 +75,10 @@ export default {
       }
     ],
   ],
+  
+  markdownit: {
+    runtime: true // Support `$md()`
+  },
 
   image: {
     providers: {
