@@ -71,6 +71,7 @@ svg {
   height: 300vw;
   top: -65vw;
   left: 50%;
+  will-change: transform;
   transform: translate(-50%, -75%);
 }
 
