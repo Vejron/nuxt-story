@@ -31,6 +31,7 @@ export default {
     '~/plugins/storyblok-rich-text-renderer.js',
     '~/plugins/vue-formulate',
     '~/plugins/graphcms.js',
+    '~/plugins/firestore.client.js',
    
   ],
 

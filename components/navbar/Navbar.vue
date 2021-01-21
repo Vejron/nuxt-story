@@ -36,8 +36,8 @@
           </li>
         </ul>
         <SearchBox :search="fetchSuggestions" class="hidden lg:flex items-center max-w-sm ml-12" />
-        <div v-clickout="onClickoutMenu" class="last-bit-stuff flex items-center">
-          <Hamburger class="md:hidden" :navbarActive="showMobile" @click="showMobile = !showMobile" />
+        <div v-clickout="onClickoutMenu" class="md:hidden last-bit-stuff flex items-center">
+          <Hamburger :navbarActive="showMobile" @click="showMobile = !showMobile" />
           <leaps
             v-if="showMobile"
             :damping="20"
@@ -94,8 +94,8 @@ export default {
           url: "/sponsor",
         },
         {
-          name: "Om oss",
-          url: "/",
+          name: "Avtal",
+          url: "/prices",
         },
         {
           name: "Kundservice",
