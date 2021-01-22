@@ -49,7 +49,11 @@
     </section>
 
     <section class="max-w-6xl mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 mx-6 mb-40">
+      <div class="mx-6">
+        <h2 class="text-4xl font-bold">Elområde SE1</h2>
+        <p class="text-lg text-gray-500">Norrbotten och uppåt. kallt men subventionerad el</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 mx-6 mb-8">
         <div
           v-for="avtal in avtals"
           :key="avtal.name"
@@ -67,7 +71,148 @@
               class="radial-glare w-full h-full absolute text-4xl text-green-200 font-extrabold"
             >
               <div class="absolute italic ml-6 bottom-0">
-                {{ avtal.price }}
+                {{ avtal.prices[0] }}
+                <span class="text-sm text-yellow-500">öre / kWh</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-grow px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ avtal.name }}</div>
+            <p class="text-gray-700 text-base">
+              {{ avtal.body }}
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span
+              v-for="tag in avtal.tags"
+              :key="tag"
+              class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+              >{{ tag }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto">
+      <div class="mx-6">
+        <h2 class="text-4xl font-bold">Elområde SE2</h2>
+        <p class="text-lg text-gray-500">Robertsfors ända ner till Gävle. Normalpris</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 mx-6 mb-8">
+        <div
+          v-for="avtal in avtals"
+          :key="avtal.name"
+          class="flex flex-col rounded overflow-hidden shadow-lg"
+        >
+          <div class="flex relative">
+            <img
+              class="w-full"
+              width="600"
+              height="600"
+              :src="avtal.image"
+              alt="nonsensbild"
+            />
+            <div
+              class="radial-glare w-full h-full absolute text-4xl text-green-200 font-extrabold"
+            >
+              <div class="absolute italic ml-6 bottom-0">
+                {{ avtal.prices[1] }}
+                <span class="text-sm text-yellow-500">öre / kWh</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-grow px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ avtal.name }}</div>
+            <p class="text-gray-700 text-base">
+              {{ avtal.body }}
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span
+              v-for="tag in avtal.tags"
+              :key="tag"
+              class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+              >{{ tag }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto">
+      <div class="mx-6">
+        <h2 class="text-4xl font-bold">Elområde SE3</h2>
+        <p class="text-lg text-gray-500">Stockholmare och annat löst folk. Ni får betala lite mer</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 mx-6 mb-8">
+        <div
+          v-for="avtal in avtals"
+          :key="avtal.name"
+          class="flex flex-col rounded overflow-hidden shadow-lg"
+        >
+          <div class="flex relative">
+            <img
+              class="w-full"
+              width="600"
+              height="600"
+              :src="avtal.image"
+              alt="nonsensbild"
+            />
+            <div
+              class="radial-glare w-full h-full absolute text-4xl text-green-200 font-extrabold"
+            >
+              <div class="absolute italic ml-6 bottom-0">
+                {{ avtal.prices[2] }}
+                <span class="text-sm text-yellow-500">öre / kWh</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-grow px-6 py-4">
+            <div class="font-bold text-xl mb-2">{{ avtal.name }}</div>
+            <p class="text-gray-700 text-base">
+              {{ avtal.body }}
+            </p>
+          </div>
+          <div class="px-6 pt-4 pb-2">
+            <span
+              v-for="tag in avtal.tags"
+              :key="tag"
+              class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+              >{{ tag }}</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto">
+      <div class="mx-6">
+        <h2 class="text-4xl font-bold">Elområde SE4</h2>
+        <p class="text-lg text-gray-500">Före detta dansk territorium med klena ledningar och rika bönder. Smakar det så kostar det</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 mx-6 mb-8">
+        <div
+          v-for="avtal in avtals"
+          :key="avtal.name"
+          class="flex flex-col rounded overflow-hidden shadow-lg"
+        >
+          <div class="flex relative">
+            <img
+              class="w-full"
+              width="600"
+              height="600"
+              :src="avtal.image"
+              alt="nonsensbild"
+            />
+            <div
+              class="radial-glare w-full h-full absolute text-4xl text-green-200 font-extrabold"
+            >
+              <div class="absolute italic ml-6 bottom-0">
+                {{ avtal.prices[3] }}
                 <span class="text-sm text-yellow-500">öre / kWh</span>
               </div>
             </div>
@@ -106,6 +251,7 @@ export default {
           image: "/images/timpris.jpg",
           name: "Timpris",
           price: 0.22,
+          prices: [66.66, 66.66, 66.66, 66.66],
           body:
             "För dig som vill ha ha det senaste och inte har problem med överraskningar, och häftiga påslag vid torka",
           tags: ["billigt", "osäkert", "spännande"],
@@ -114,6 +260,7 @@ export default {
           image: "/images/rorligt.jpg",
           name: "Rörligt",
           price: 0.32,
+          prices: [66.66, 66.66, 66.66, 66.66],
           body:
             "Det vettiga alternativet. Du betalar vad det kostar och vi tar nån procent uppepå",
           tags: ["smart", "lagom", "vettigt"],
@@ -122,6 +269,7 @@ export default {
           image: "/images/fast.jpg",
           name: "Fast",
           price: 0.42,
+          prices: [66.66, 66.66, 66.66, 66.66],
           body:
             "Är du lite feg och vill kunna göra en budget för flera år framöver. Är det viktigare att kalkylen blir rätt än att priset blir bra?",
           tags: ["trist", "dyrt", "tråkigt"],
@@ -130,20 +278,6 @@ export default {
     };
   },
   mounted() {
-    // Use the input event for instant update of content
-    this.$storybridge.on("input", (event) => {
-      if (event.story.id === this.story.id) {
-        this.story.content = event.story.content;
-      }
-    });
-    // Use the bridge to listen the events
-    this.$storybridge.on(["published", "change"], (event) => {
-      // window.location.reload()
-      this.$nuxt.$router.go({
-        path: this.$nuxt.$router.currentRoute,
-        force: true,
-      });
-    });
     // realtime updates
     this.unsubscribe = store.collection("prices").onSnapshot((snapshot) => {
       const data = snapshot.docs.map((doc) => ({

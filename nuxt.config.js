@@ -25,6 +25,7 @@ export default {
     '~/plugins/components',
     '~/plugins/composition-api.js',
     '~/plugins/vuetensils.client.js',
+    //'~/plugins/vuetensils.js',
     '~/plugins/gtag-plugin.client.js',
     '~/plugins/crisp.client.js',
     '~/plugins/parallax.js',
