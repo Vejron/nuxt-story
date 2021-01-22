@@ -2,6 +2,12 @@
   <div>
     <section class="max-w-6xl mx-auto">
       <div class="m-6 flex">
+        <VImg :classes="{placeholder: 'placeholder-class', img: 'top-hero-image' }" class="w-full overflow-hidden" src="/images/greenwashing.jpg" width="1024" height="728" />
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto">
+      <div class="m-6 flex">
         <div>
           <h1
             class="leading-tight mb-4 text-4xl md:text-6xl text-green-800 font-extrabold"
@@ -23,7 +29,7 @@
             för att ändra i befintliga avtal
           </p>
           <p class="text-md font-semibold text-lg">
-            Skriv in postnummer för att ta del av erbjudanden i ditt elområde
+            Skriv in ditt postnummer för att ta del av erbjudanden i ditt elområde
           </p>
           <input
             class="mt-4 font-semibold focus:outline-none focus:ring focus:border-blue-300 border-yellow-600 border-4 rounded-xl py-2 px-3 text-grey-darkest"
@@ -170,7 +176,13 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.top-hero-image {
+  max-height: 500px;
+  width: 100%;
+  mask:linear-gradient(transparent 0%, #fff 20%, #fff 80%, transparent 100%);
+}
+
 .radial-glare {
   background: radial-gradient(
     circle,
