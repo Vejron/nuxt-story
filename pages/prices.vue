@@ -2,7 +2,7 @@
   <div>
     <section class="max-w-6xl mx-auto">
       <div class="m-6 flex">
-        <VImg :classes="{placeholder: 'placeholder-class', img: 'top-hero-image' }" class="w-full overflow-hidden" src="/images/greenwashing.jpg" width="1024" height="728" />
+        <img class="top-hero-image overflow-hidden" src="/images/greenwashing.jpg" width="1024" height="500" />
       </div>
     </section>
 
@@ -312,7 +312,7 @@ export default {
 
 <style>
 .top-hero-image {
-  max-height: 500px;
+  height: 500px;
   width: 100%;
   mask:linear-gradient(transparent 0%, #fff 20%, #fff 80%, transparent 100%);
 }
