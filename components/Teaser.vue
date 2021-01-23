@@ -10,6 +10,7 @@
     "
   >
     <div class="waves"></div>
+
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.1 121.1">
       <g>
         <g>
@@ -28,8 +29,12 @@
         </g>
       </g>
     </svg>
-    <h1 v-parallax="-0.2" class="text-6xl mb-6">{{ blok.headline }}</h1>
-    <p v-parallax="0.2" class="text-xl">{{ blok.subheading }}</p>
+    <div class="teaser-text relative">
+      <h1 class="text-3xl md:text-6xl font-bold mb-6">
+        {{ blok.headline }}
+      </h1>
+      <p class="text-xl">{{ blok.subheading }}</p>
+    </div>
   </div>
 </template>
 
@@ -40,7 +45,6 @@ export default {
     blok: {
       type: Object,
       required: true,
-      
     },
   },
 };
@@ -48,7 +52,11 @@ export default {
 </script>
 
 <style scoped>
+.teaser-text {
+  transform: translate3d(0, -20%, 0);
+}
 svg {
+  z-index: 0;
   position: absolute;
   width: 15vw;
   opacity: 0.3;
@@ -80,7 +88,6 @@ svg {
     width: 50vw;
   }
 }
-
 
 .waves::before {
   border-radius: 44%;

@@ -28,7 +28,6 @@ export default {
     //'~/plugins/vuetensils.js',
     '~/plugins/gtag-plugin.client.js',
     '~/plugins/crisp.client.js',
-    '~/plugins/parallax.js',
     '~/plugins/storyblok-rich-text-renderer.js',
     '~/plugins/vue-formulate',
     '~/plugins/graphcms.js',

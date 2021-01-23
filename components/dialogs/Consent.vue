@@ -5,13 +5,13 @@
       <div class="flex justify-between text-sm font-semibold">
         <button
           @click="consent(true)"
-          class="flex shadow block border-green-600 border-2 rounded-full focus:outline-none focus:border-green-600 px-4 py-2 text-green-600 hover:bg-green-600 hover:text-white"
+          class="shadow block border-green-600 border-2 rounded-full focus:outline-none focus:border-green-600 px-4 py-2 text-green-600 hover:bg-green-600 hover:text-white"
         >
           <span>OK</span>
         </button>
         <button
           @click="consent(false)"
-          class="flex shadow block border-green-600 border-2 rounded-full focus:outline-none focus:border-green-600 px-4 py-2 text-green-600 hover:bg-green-600 hover:text-white"
+          class="shadow block border-green-600 border-2 rounded-full focus:outline-none focus:border-green-600 px-4 py-2 text-green-600 hover:bg-green-600 hover:text-white"
         >
           <span>NEJ TACK</span>
         </button>
