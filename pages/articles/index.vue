@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="py-10 text-center font-bold text-4xl">Artikel översikt</h2>
+    <h2 class="py-10 text-center font-bold text-4xl">Artiklar</h2>
     <ul class="mx-0 md:mx-4 grid md:grid-cols-2 xl:grid-cols-4 gap-6">
       <li
         v-for="article in stories"

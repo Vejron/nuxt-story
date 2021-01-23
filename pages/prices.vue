@@ -3,7 +3,7 @@
     <section class="max-w-6xl mx-auto">
       <div class="m-6 flex">
         <img
-          class="top-hero-image overflow-hidden"
+          class="top-hero-image object-cover overflow-hidden"
           src="/images/greenwashing.jpg"
           width="1024"
           height="500"
@@ -179,7 +179,7 @@ export default {
 
 <style>
 .top-hero-image {
-  height: 500px;
+  height: 50vh;
   width: 100%;
   mask: linear-gradient(transparent 0%, #fff 20%, #fff 80%, transparent 100%);
 }

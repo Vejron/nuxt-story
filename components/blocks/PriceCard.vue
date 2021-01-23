@@ -1,19 +1,23 @@
 <template>
-  <div class="flex flex-col rounded overflow-hidden shadow-lg">
-    <div class="flex relative">
-      <img
-        class="w-full"
-        width="600"
-        height="600"
-        :src="avtal.image"
-        alt="nonsensbild"
-      />
-      <div
-        class="radial-glare w-full h-full absolute text-4xl text-green-200 font-extrabold"
-      >
-        <div class="absolute italic ml-6 bottom-0">
-          {{ avtal.prices[area] }}
-          <span class="text-sm text-yellow-500">öre / kWh</span>
+  <div
+    class="card-wrapper flex flex-col rounded overflow-hidden shadow-lg transition-shadow duration-500 hover:shadow-2xl"
+  >
+    <div>
+      <div class="flex relative overflow-hidden">
+        <img
+          class="w-full"
+          width="600"
+          height="600"
+          :src="avtal.image"
+          alt="nonsensbild"
+        />
+        <div
+          class="radial-glare w-full h-full absolute text-4xl text-green-200 font-extrabold"
+        >
+          <div class="absolute italic ml-6 bottom-0">
+            {{ price }}
+            <span class="text-sm text-yellow-500">öre / kWh</span>
+          </div>
         </div>
       </div>
     </div>
@@ -40,24 +44,54 @@ export default {
   props: {
     avtal: {
       type: Object,
-      required: true
+      required: true,
     },
     area: {
-      required: true
+      required: true,
+    },
+  },
+  data() {
+    return {
+      price: 0
     }
   },
   watch: {
     avtal(current, previus) {
-      
-      if(current.prices[this.area] !== previus.prices[this.area]) {
-        console.log('Price changed to', current.prices[this.area])
+      if (current.prices[this.area] !== previus.prices[this.area]) {
+        console.log("Price changed to", current.prices[this.area]);
+        this.price = current.prices[this.area];
       }
-    }
-  }
-}
+    },
+  },
+  created() {
+    this.price = this.avtal.prices[this.area];
+  },
+  methods: {
+    animateValue(start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        this.price = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    },
+  },
+};
 </script>
 
 <style scoped>
+img {
+  filter: brightness(100%);
+  transition: transform 0.5s, filter 0.5s ease-in-out;
+}
+.card-wrapper:hover img {
+  transform: scale(1.05);
+  filter: brightness(120%);
+}
 .radial-glare {
   background: radial-gradient(
     circle,
