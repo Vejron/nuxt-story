@@ -12,7 +12,7 @@
           <nuxt-link to="/register" class="pl-2">Företag</nuxt-link>
         </div>
         <div>
-          <nuxt-link to="/">Pressrum</nuxt-link>
+          <nuxt-link to="/kundservice/drift">Driftstatus</nuxt-link>
         </div>
       </div>
       <div

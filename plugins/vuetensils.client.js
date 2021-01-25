@@ -6,5 +6,6 @@ import { clickout } from 'vuetensils';
 
 Vue.directive('clickout', clickout);
 Vue.component('VDialog', VDialog);
+
 //Vue.component('VImg', VImg);
 //Vue.component('VAlert', VAlert);
