@@ -1,6 +1,6 @@
 <template>
   <div class="relative">
-		<!-- Magnifying glass icon -->
+    <!-- Magnifying glass icon -->
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
@@ -19,9 +19,10 @@
       class="w-full bg-white text-gray-700 rounded border-2 border-transparent outline-none focus:border-purple-500 px-4 py-1"
     />
     <!-- Suggestions list -->
-    <div class="absolute w-full">
+    <transition name="slide-up">
       <div
-        class="absolute z-30 bg-white top-0 inset-x-0 rounded shadow-lg mt-1"
+        v-if="suggestions && suggestions.length"
+        class="suggestion-box absolute z-30 bg-white inset-x-0 rounded shadow-lg"
       >
         <nuxt-link
           v-for="suggestion in suggestions"
@@ -32,12 +33,12 @@
           {{ suggestion.name }}
         </nuxt-link>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
 <script>
-import debounce from 'lodash/debounce'
+import debounce from "lodash/debounce";
 
 export default {
   props: {
@@ -47,16 +48,22 @@ export default {
     },
   },
   data: () => ({
-    searchInput: '',
+    searchInput: "",
     suggestions: [],
   }),
   methods: {
     onInputChange: debounce(async function () {
-      this.suggestions = await this.search(this.searchInput)
+      this.suggestions = await this.search(this.searchInput);
     }, 300),
     onInputBlur() {
-      setTimeout(() => (this.suggestions = []), 300)
+      setTimeout(() => (this.suggestions = []), 300);
     },
   },
-}
+};
 </script>
+
+<style scoped>
+.suggestion-box {
+  top: 3.5rem;
+}
+</style>

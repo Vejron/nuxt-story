@@ -1,7 +1,7 @@
 <template>
-  <div v-editable="blok">
+  <section class="max-w-6xl mx-auto" v-editable="blok">
     <h2 class="pt-2 pl-6 text-lg text-gray-700 italic">{{ blok.title }}</h2>
-    <ul class="grid my-8 gap-8 md:grid-cols-3">
+    <ul class="grid mx-6 gap-8 md:grid-cols-3">
       <li
         v-for="article in sortedArticles" :key="article._uid"
         class="flex-auto ">
@@ -12,7 +12,7 @@
         <p v-else class="px-4 py-2 text-white bg-red-700 text-center rounded">This content loads on save. <strong>Save the entry & reload.</strong></p>
       </li>
     </ul>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -1,7 +1,8 @@
 <template>
+<section class="max-w-6xl mx-auto">
   <ul
     v-editable="blok"
-    class="grid my-6 gap-4 md:grid-cols-3">
+    class="grid m-6 gap-6 md:grid-cols-3">
     <li
       :key="blok._uid"
       v-for="blok in blok.columns"
@@ -9,6 +10,7 @@
       <component :blok="blok" :is="blok.component" />
     </li>
   </ul>
+</section>
 </template>
 
 <script>

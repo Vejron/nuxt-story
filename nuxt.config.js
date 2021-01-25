@@ -43,6 +43,7 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/pwa',
     '@nuxtjs/tailwindcss',
+    'nuxt-animejs',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)

@@ -6,6 +6,7 @@ import ResponsiveGrid from '~/components/ResponsiveGrid.vue'
 import Feature from '~/components/Feature.vue'
 import FeaturedArticles from '~/components/FeaturedArticles.vue'
 import ArticleTeaser from '~/components/ArticleTeaser.vue'
+import TeaserCard from '~/components/blocks/TeaserCard.vue'
 import DynamicForm from '~/components/DynamicForm.vue'
 import InputField from '~/components/InputField.vue'
 
@@ -16,5 +17,6 @@ Vue.component('responsive-grid', ResponsiveGrid)
 Vue.component('feature', Feature)
 Vue.component('featured-articles', FeaturedArticles)
 Vue.component('article-teaser', ArticleTeaser)
+Vue.component('teaser-card', TeaserCard)
 Vue.component('dynamic-form', DynamicForm)
 Vue.component('input-field', InputField)
